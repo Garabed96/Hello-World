@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<!-- used to add font awesome to the share button (twitter logo)-->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+<link href="styles.css" rel="stylesheet">
+<script src="main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+</head>
+
+<body class="background">
+<div class="container quoteBackground" id="right-well">
+    <div class="amessage">
+        <div class=" fa fa-quote-left center" >
+            Click new quote
+        </div>
+    </div>
+    <div class="anotherMessage text-right">
+    </div>
+    <div class="center-block  shared">
+        <a data-size="large">
+            <div class="row col-xs-1">
+                <button onclick="tweetIt()" title="tweet it" class="btn btn-info" id="share">
+                    <i class="fa fa-twitter"> </i>
+                </button>
+            </div>
+        </a>
+    </div>
+    <!-- When New Quote is pressed JSON is accessed and a random quote is chosen and displayed-->
+    <div class="center-block">
+        <button id="getMessage" class="btn btn-info fa">
+            New Quote
+        </button>
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function() {
+        var url="https://gist.githubusercontent.com/Garabed96/2b96e858ac92373b55f6b37d1a62f6f5/raw/ca827ce54bc448e315e96a4cdce82f4489e7eaec/QuotesW.json";
+        $("#getMessage").on("click", function(){
+
+            $.getJSON(url, function(data){
+                var randomNumber = Math.floor(Math.random()* data.length);
+                // $(".message").html(JSON.stringify(json));
+                $(".amessage").html(data[randomNumber].quote);                       $(".anotherMessage").html(data[randomNumber].name);
+            });
+        });
+    });
+</script>
+<div class="footer text-center tag" >
+    <!--    <a title="my other projects are here"target="_blank" href="https://codepen.io/CapGaro/">-->
+    <!--        by Cap-->
+    <!--    </a>-->
+</div>
+
+</html>

@@ -1,0 +1,41 @@
+body{
+    background-color:black;
+}
+.quoteBackground
+{
+    border-radius:10px;
+    background-color: white ;
+    margin-top: 200px;
+}
+
+.amessage
+{
+    padding: 10px;
+    background-color: white;
+    margin-top:60px;
+    font-family:crusive;
+    font-size:1.5em;
+}
+
+.anotherMessage
+{
+    font-family:cursive;
+}
+
+.tag a
+{
+    color:#010000;
+    font-family:Arial;
+    font-size:1em;
+}
+
+.background
+{
+    background-color:DarkTurquoise ;
+}
+
+h1
+{
+    font-family: Sans-serif;
+}
+
